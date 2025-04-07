@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI YouTube Learning - Competitive Exams</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        select, button { margin: 10px; padding: 10px; font-size: 16px; }
+        #video-container { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        iframe { width: 400px; height: 250px; border: none; }
+    </style>
+</head>
+<body>
+    
+
+    <h1>🎥 AI-Powered E-Learning for Competitive Exams</h1>
+
+    <label>Select a Subject:</label>
+    <br>
+    <select id="subject">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+        <option value="react">React</option>
+        <option value="c">C Programming</option>
+        <option value="cpp">C++ Programming</option>
+        <option value="java">Java</option>
+        <option value="dsa">Data Structures & Algorithms</option>
+    </select>
+    <br>
+    <button onclick="getVideos()">Get AI Recommendations</button>
+
+    <div id="video-container"></div>
+
+    <script>
+        function getVideos() {
+            let subject = document.getElementById("subject").value;
+
+            let videoLinks = {
+                "html": [
+                    "https://www.youtube.com/embed/qz0aGYrrlhU",
+                    "https://www.youtube.com/embed/UB1O30fR-EE",
+                    "https://www.youtube.com/embed/HD13eq_Pmp8",
+                    "https://www.youtube.com/embed/mU6anWqZJcc",
+                    "https://www.youtube.com/embed/J2zjW8cNQxU",
+                    "https://www.youtube.com/watch?v=HcOc7P5BMi4"
+                ],
+                "css": [
+                    "https://www.youtube.com/embed/1Rs2ND1ryYc",
+                    "https://www.youtube.com/embed/OXGznpKZ_sA",
+                    "https://www.youtube.com/embed/Edsxf_NBFrw",
+                    "https://www.youtube.com/embed/wRNinF7YQqQ",
+                    "https://www.youtube.com/embed/xF7fImYF7nM"
+                ],
+                "javascript": [
+                    "https://www.youtube.com/embed/PkZNo7MFNFg",
+                    "https://www.youtube.com/embed/8dWL3wF_OMw",
+                    "https://www.youtube.com/embed/W6NZfCO5SIk",
+                    "https://www.youtube.com/embed/SBmSRK3feww",
+                    "https://www.youtube.com/embed/y17RuWkWdn8"
+                ],
+                "react": [
+                    "https://www.youtube.com/embed/bMknfKXIFA8",
+                    "https://www.youtube.com/embed/Tn6-PIqc4UM",
+                    "https://www.youtube.com/embed/Dorf8i6lCuk",
+                    "https://www.youtube.com/embed/Fm5kmx7d4U4",
+                    "https://www.youtube.com/embed/QFaFIcGhPoM"
+                ],
+                "c": [
+                    "https://www.youtube.com/embed/KJgsSFOSQv0",
+                    "https://www.youtube.com/embed/irqbmMNs2Bo",
+                    "https://www.youtube.com/embed/ZSPZob_1TOk",
+                    "https://www.youtube.com/embed/sI2E7t6X8cw",
+                    "https://www.youtube.com/embed/VQZTZsXk9Js"
+                ],
+                "cpp": [
+                    "https://www.youtube.com/embed/vLnPwxZdW4Y",
+                    "https://www.youtube.com/embed/mUQZ1qmKlLY",
+                    "https://www.youtube.com/embed/8jLOx1hD3_o",
+                    "https://www.youtube.com/embed/FZIgBtbrIao",
+                    "https://www.youtube.com/embed/TxspsSc-28g"
+                ],
+                "java": [
+                    "https://www.youtube.com/embed/eIrMbAQSU34",
+                    "https://www.youtube.com/embed/GoXwIVyNvX0",
+                    "https://www.youtube.com/embed/grEKMHGYyns",
+                    "https://www.youtube.com/embed/BGTx91t8q50",
+                    "https://www.youtube.com/embed/RRubcjpTkks"
+                ],
+                "dsa": [
+                    "https://www.youtube.com/embed/8hly31xKli0",
+                    "https://www.youtube.com/embed/MyU3ZJdc5M8",
+                    "https://www.youtube.com/embed/tz-Bb-HYmuM",
+                    "https://www.youtube.com/embed/WQoB2z67hvY",
+                    "https://www.youtube.com/embed/AT14lCXuMKI"
+                ]
+            };
+
+            let selectedVideos = videoLinks[subject] || [];
+            let videoContainer = document.getElementById("video-container");
+            videoContainer.innerHTML = "";
+
+            if (selectedVideos.length > 0) {
+                selectedVideos.forEach(videoUrl => {
+                    videoContainer.innerHTML += `<iframe src="${videoUrl}" allowfullscreen></iframe>`;
+                });
+            } else {
+                videoContainer.innerHTML = "<p>No videos available for this subject.</p>";
+            }
+        }
+    </script>
+
+</body>
+</html>
